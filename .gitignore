@@ -1,0 +1,1 @@
+# Python\nbackend/venv/\n__pycache__/\n*.pyc\n*.pyo\n*.pyd\n*.sqlite3\nmedia/\n\n# Django\nstaticfiles/\n\n# Node\nfrontend/node_modules/\nfrontend/dist/\n\n# Logs\n*.log\n\n# OS\n.DS_Store\nThumbs.db\n\n# Env\n.env\n.env.*\n\n# IDE\n.vscode/\n.idea/\n
