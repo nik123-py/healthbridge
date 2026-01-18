@@ -13,3 +13,7 @@ class ConsultationViewSet(viewsets.ModelViewSet):
         elif self.request.user.role == 'DOCTOR':
             return Consultation.objects.filter(doctor=self.request.user)
         return Consultation.objects.all()
+    
+    def perform_create(self, serializer):
+        # Automatically set the co_worker to the current user
+        serializer.save(co_worker=self.request.user)

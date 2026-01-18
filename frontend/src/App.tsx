@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import PatientRegistration from './pages/PatientRegistration';
 import VitalsEntry from './pages/VitalsEntry';
+import Consultations from './pages/Consultations';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/register-patient" element={<PatientRegistration />} />
           <Route path="/vitals-entry" element={<VitalsEntry />} />
+          <Route path="/consultations" element={<Consultations />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </div>

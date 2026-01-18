@@ -41,7 +41,26 @@ const PatientRegistration: React.FC = () => {
     setError('');
 
     try {
-      await api.post('/patients/patients/', formData);
+      // Register the patient
+      const patientResponse = await api.post('/patients/patients/', formData);
+      const patientId = patientResponse.data.id;
+      
+      // Create an initial consultation for the new patient
+      const consultationData = {
+        patient: patientId,
+        title: `Initial Consultation - ${formData.first_name} ${formData.last_name}`,
+        description: `Initial consultation for newly registered patient ${formData.first_name} ${formData.last_name}`,
+        symptoms: 'New patient registration - awaiting initial assessment',
+        diagnosis: '',
+        treatment_plan: '',
+        prescription: '',
+        status: 'SCHEDULED',
+        priority: 'MEDIUM',
+        scheduled_at: new Date().toISOString(),
+      };
+      
+      await api.post('/consultations/consultations/', consultationData);
+      
       navigate('/dashboard');
     } catch (err: any) {
       setError(err.response?.data?.error || 'Registration failed');

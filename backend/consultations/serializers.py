@@ -15,4 +15,4 @@ class ConsultationSerializer(serializers.ModelSerializer):
             'diagnosis', 'treatment_plan', 'prescription', 'status', 'priority',
             'scheduled_at', 'started_at', 'completed_at', 'created_at', 'updated_at'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'co_worker', 'created_at', 'updated_at']

@@ -169,6 +169,13 @@ const Dashboard: React.FC = () => {
               >
                 View Consultations
               </Button>
+              <Button 
+                className="w-full" 
+                variant="outline"
+                onClick={() => window.open('https://labinatorsolutions.github.io/medical-symptom-checker/', '_blank')}
+              >
+                Medical Symptom Checker
+              </Button>
             </CardContent>
           </Card>
 
